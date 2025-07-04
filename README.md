@@ -48,7 +48,7 @@ All orchestrated via [FastAPI](https://fastapi.tiangolo.com/) for a clean, moder
 ### 1. Clone and Setup
 
 ```bash
-git clone <https://github.com/Ahad-23/bloodtest_debug.git>
+git clone https://github.com/Ahad-23/bloodtest_debug.git
 cd bloodtest_debug
 
 # (Recommended) Setup virtual environment
