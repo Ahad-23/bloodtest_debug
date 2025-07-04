@@ -24,7 +24,7 @@ All orchestrated via [FastAPI](https://fastapi.tiangolo.com/) for a clean, moder
 | Agents Framework   | CrewAI                                        |
 | PDF Parsing        | langchain-community PyPDFLoader               |
 | Search Tool        | SerperDevTool                                 |
-| AI Models          | Gemini 1.5 Flash (via CrewAI LLM wrapper)     |
+| AI Models          | Gemini 2.0 Flash (via CrewAI LLM wrapper)     |
 | Others             | python-multipart, pydantic, dotenv, uvicorn   |
 
 ---
@@ -122,18 +122,8 @@ Run full agent pipeline (verification + doctor + nutrition + exercise)
 
 ## 🐞 Bugs Fixed (Approach)
 
-> Full details in [`BUGS.md`](BUGS.md), but a summary:
+> Full details in [`BUGS.md`](BUGS.md)
 
-| Bug | Root Cause | Fix |
-|-----|------------|-----|
-| `BaseTool` ImportError | Incorrect tool structure and import | Switched to new `tool` decorator or `BaseTool` class with proper schemas |
-| Agent tool errors | Tools were passed as async functions | Refactored all tools as `BaseTool` subclasses |
-| `verbose` keyword duplicated | Passed manually & via `**kwargs` | Removed duplicate verbose param |
-| Gemini model failed | `Crew` expected OpenAI key by default | Passed Gemini model correctly via CrewAI’s LLM wrapper |
-| Swagger UI broken | Missing JS bundle or invalid certificate | Used a REST client (Postman or curl) instead |
-| requirements bloated | Accidentally pushed `.venv` | Cleaned `.gitignore`, regenerated `requirements.txt` with `pipreqs` |
-| `python-multipart` missing | Required for file upload | Installed explicitly |
-| `git restore .` failed | Repo not initialized or clean | Ran `git init`, `.gitignore`, and re-committed properly |
 
 ---
 
